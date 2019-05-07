@@ -1,3 +1,4 @@
+
 ## **Name : Omar Awad**
 ### Email : omaar.awad.89@gmail.com 
 ### Landline : +961 4 986 261
@@ -19,7 +20,7 @@
   - Microsoft PowerPoint (Proficient)
   - Capital Pro 3.1 Accounting Program (Intermediate)
   - Dolphin (Basic)
-  
+
 * Recent Work Experience :
   -Interpreter/Translator: UNHCR 
   -Interpreter/Translator: IOM
