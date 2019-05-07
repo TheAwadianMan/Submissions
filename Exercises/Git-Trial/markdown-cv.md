@@ -1,4 +1,4 @@
-![alt text](GitHubCV.jpg)
+![alt text](ComputerGenius.jpg)
 ## **Name : Omar Awad**
 ### Email : omaar.awad.89@gmail.com 
 ### Landline : +961 4 986 261
