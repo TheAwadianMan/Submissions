@@ -19,6 +19,10 @@
   - Microsoft PowerPoint (Proficient)
   - Capital Pro 3.1 Accounting Program (Intermediate)
   - Dolphin (Basic)
+  
+* Recent Work Experience :
+  -Interpreter/Translator: UNHCR 
+  -Interpreter/Translator: IOM
 
 * Languages:
   - Arabic (Native)
