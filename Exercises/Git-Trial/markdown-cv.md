@@ -1,11 +1,10 @@
-
+![Image](https://github.com/TheAwadianMan/Submissions/blob/master/DigiBean-works-w-charity.-L2R-Lucas-Pellerin-Martine-Lemieux-Jasper-Pellerin-Jean-Luc-Goudreau-493x300.jpg "My CV")
 ## **Name : Omar Awad**
 ### Email : omaar.awad.89@gmail.com 
 ### Landline : +961 4 986 261
 ### Mobile Number : +961 76 428 144
 ### DOB : 30/06/1989
 ### Address : Beit Chabab Mar Nohra Street Block C2
-![alt text](ComputerGenius.jpg)
 * About:
   - Hard-working, professional individual seeking a career change and improve hard skills in coding and programming, and soft skills by becoming a better communicator.
 
