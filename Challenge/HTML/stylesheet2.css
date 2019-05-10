@@ -1,0 +1,70 @@
+body{
+    width: 1200px;
+    margin: auto;
+    background-color: rgb(81, 201, 209);
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.mainMenu{
+    list-style-type: square;
+}
+
+.home {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.order {
+    float: left;
+}
+
+.firstdev {
+    width: 30%;
+    float: left;
+}
+
+.seconddev {
+    width: 70%;
+    float: right;
+}
+
+.thirddev {
+    width: 50%;
+    float: left;
+}
+
+.fourthdev {
+    width: 50%;
+    float: right;
+}
+
+.sixthdev {
+    clear: both;
+    display: block;
+}
+
+header {
+    background-image: url("https://www.studzine.com/wp-content/uploads/2017/11/StudZine-IoT-2.png");
+    height: 250px;
+    padding-left: 40px;
+    padding-top: 50px;
+}
+
+.imgback {
+    font-size: 40px;
+}
