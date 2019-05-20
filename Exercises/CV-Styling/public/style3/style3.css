@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+
+header {
+    margin-top: 50px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#branding h1{
+    font-size: 35px;
+    color: #000;
+}
+
+header nav ul li {
+    float: left;
+    padding: 0 20px 0 20px;
+}
+
+header nav ul li:last-child {
+    padding-right: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #707070;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Area */
+
+#hero-area {
+    margin-top: 85px;
+}
+
+#hero-area .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#hero-area h3{
+    font-size: 25px;
+    color: #000;
+    margin-top: 35px;
+}
+
+#hero-area #hero-text {
+    width: 50%;
+}
+
+.hero-bold {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#hero-contact p{
+    margin-top: 10px;
+}
+
+#hero-social {
+    margin-top: 5px;
+}
+
+#hero-social ul li {
+    float: left;
+    padding: 3px;
+}
+
+#hero-social #follow-me {
+    margin-top: 3px;
+}
+
+/* Experience */
+
+#experience .container {
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 90px 0 90px 0;
+    margin: 90px auto 90px auto;
+}
+
+#experience h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+}
+
+#experience h3, #education h3 {
+    margin-top: 50px;
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#experience p, #education p {
+    margin-top: 15px;
+    line-height: 1.5em;
+}
+
+#education .container {
+    padding-bottom: 90px;
+    margin-bottom: 90px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+/* Contact Area */
+
+#contact form {
+    margin-top: 55px;
+}
+
+#contact form input {
+    width: 47%;
+    height: 45px;
+    border: 1px solid #bcbcbc;
+    padding-left: 10px;
+    color: #707070;
+    font-size: 14px;
+}
+
+#contact .input-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact form textarea {
+    margin-top: 18px;
+    width: 97%;
+    padding-left: 10px;
+    padding-top: 10px;
+    color: #707070;
+    font-size: 14px;
+}
+
+#contact form .form-button {
+    width: 98%;
+    cursor: pointer;
+    background-color: #3b3b3b;
+    color: #fff;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 150px;
+    padding: 25px;
+    border-top: 1px solid #e1e1e1;
+    color: #a8a8a8;
+    font-size: 14px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer nav ul li {
+    float: left;
+}
+
+footer nav ul li a {
+    color: #a8a8a8;
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media (max-width: 1500px) {
+    #hero-area #hero-text {
+        width: 40%;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1274px) {
+    .cv-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1090px) {
+    .cv-image {
+        width: 90%;
+    }
+
+    #hero-image {
+        text-align: right;
+    }
+
+    #hero-social ul {
+        float: right;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    header .container {
+        display: block;
+    }
+
+    .steve-mage {
+        width: 100%
+    }
+
+    #hero-area #hero-text {
+        width: 70%;
+        padding-right: 20px;
+    }
+
+    #hero-image {
+        width: 100%;
+    }
+
+    #hero-area #hero-text {
+        width: 70%;
+        padding-right: 20px;
+    }
+
+    #hero-image {
+        width: 70%;
+    }
+
+    header #branding h1 {
+        text-align: center;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+
+    header nav ul li {
+        float: none;
+    }
+
+    #contact form .form-button {
+        width: 99%;
+    }
+}
+
+@media (max-width: 650px) {
+    #hero-area .container {
+        margin-top: -30px;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    #hero-area #hero-text {
+        width: 90%;
+        padding: 0;
+        margin: auto;
+    }
+
+    #hero-image {
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    #hero-social {
+        display: flex;
+        justify-content: center;
+    }
+
+    #contact form .form-button {
+        width: 100%;
+    }
+
+    footer .container {
+        display: block;
+        text-align: center;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+}
