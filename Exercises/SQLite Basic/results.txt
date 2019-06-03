@@ -1,0 +1,65 @@
+I-) Basic Queries==>
+
+1-) Get all the names of the students in the database.
+
+Query Answer: SELECT all name FROM students;
+
+Result of the query: 
+"Alex"
+"Basma"
+"Hasan"
+"Jana"
+"Layal"
+"Robert".
+
+2-) Get all the data of students above 30 years old.
+
+Query Answer: SELECT ALL name FROM students WHERE age >30;
+
+Result of the query:
+"Robert"
+"Jana"
+
+3-) Get the names of the females who are 30 years old.
+
+Query Answer: 
+SELECT name FROM students where Gender= "F" and age=30;
+
+Result of the query:
+No female is 30 years old.
+
+4-) Get the number of Points of Alex.
+
+Query Answer: 
+Select points FROM students WHERE name= "Alex";
+
+Result of the Query: 
+200
+
+5-) Add yourself as a new student (your name, your age...)
+
+Query answer: 
+INSERT INTO students VALUES (7, 'Omar', 29, 'M', 1000);
+
+Result of the query:
+Query executed successfully: INSERT INTO students VALUES (7, 'Omar', 29, 'M', 1000); (took 0ms, 1 rows affected).
+
+6-) Increase the points of Basma because she solved a new exercise.
+
+Query Answer:
+UPDATE students SET 'Points'= 400 WHERE ID= 2;
+
+Result of the query:
+Query executed successfully: UPDATE students SET 'Points'= 400 WHERE ID= 2; (took 0ms, 1 rows affected).
+
+7-) Decrease the points of Alex because he's late today.
+
+Query Answer: 
+UPDATE students SET 'Points'= 100 WHERE ID= 1;
+
+Result of the query:
+Query executed successfully: UPDATE students SET 'Points'= 100 WHERE ID= 1; (took 0ms, 1 rows affected).
+
+
+
+
