@@ -13,6 +13,21 @@ Result of the query:
 "Robert".
 
 2-) Get all the data of students above 30 years old.
+I-) Basic Queries==>
+
+1-) Get all the names of the students in the database.
+
+Query Answer: SELECT all name FROM students;
+
+Result of the query: 
+"Alex"
+"Basma"
+"Hasan"
+"Jana"
+"Layal"
+"Robert".
+
+2-) Get all the data of students above 30 years old.
 
 Query Answer: SELECT ALL name FROM students WHERE age >30;
 
@@ -59,6 +74,147 @@ UPDATE students SET 'Points'= 100 WHERE ID= 1;
 
 Result of the query:
 Query executed successfully: UPDATE students SET 'Points'= 100 WHERE ID= 1; (took 0ms, 1 rows affected).
+
+II-) Creating Table: 
+
+Create a table==>
+
+Answer:
+
+CREATE TABLE graduates (
+ID Int varchar(255) PRIMARY KEY AUTO_INCREMENT
+Name varchar(255) NOT NULL UNIQUE
+Age Int,
+Gender varchar(255),
+Points Int,
+Graduation, DATE
+ );
+
+Result of the query:
+table graduates already exists: CREATE TABLE graduates (
+
+1-) Copy Layal's data from students to graduates
+
+Query Answer: 
+INSERT INTO graduates ('ID', 'Name', 'Age', 'Gender', 'Points') SELECT * FROM students where ID= 4;
+
+Result of the query: 
+Query executed successfully: INSERT INTO graduates ('ID', 'Name', 'Age', 'Gender', 'Points') SELECT * FROM students where ID= 4;
+
+
+
+2-) Add the graduation date previously mentioned to Layal's record in graduates
+
+Query Answer: 
+UPDATE graduates SET Graduation= '08/09/2018' WHERE ID= 4;
+
+Result of the query: 
+Query executed successfully: UPDATE graduates SET Graduation= '08/09/2018' WHERE ID= 4; (took 0ms, 1 rows affected)
+
+3-) Remove Layal's record from students
+
+Query Answer:
+DELETE FROM students WHERE Name= 'Layal';
+
+Result of the query: 
+Query executed successfully: DELETE FROM students WHERE Name= 'Layal'; 
+
+III-) Joins ==>
+
+11-) Produce a table that contains, for each employee, his/her name, company name, and company date 
+
+Query Answer:
+SELECT employees.Name, employees.Company, companies.Date
+
+FROM employees
+
+INNER JOIN companies ON employees.Company= companies.Name;
+
+"Marc"	"Google"	"1998"
+"Maria"	"Google"	"1998"
+"Alaa"	"Facebook"	"2004"
+"Hala"	"Snapchat"	"2011"
+
+Result of the query:
+4 rows returned in 3ms from: SELECT employees.Name, employees.Company, companies.Date
+FROM employees
+INNER JOIN companies ON employees.Company= companies.Name;
+
+12-) Find the name of employees that work in companies made before 2000
+
+Query Answer:
+SELECT employees.Name, employees.Company, companies.Date
+FROM employees INNER JOIN companies ON employees.Company=companies.name
+WHERE companies.Date <2000;
+
+Result of the query:
+"Marc"	"Google"	"1998"
+"Maria"	"Google"	"1998"
+
+13-) Find the name of company that has a graphic designer
+
+Query Answer:
+SELECT * FROM employees WHERE ROLE='Graphic Designer';
+
+Result of the Query:
+"4"	"Hala"	"Graphic Designer"	"Snapchat"
+
+1 rows returned in 2ms from: SELECT * FROM employees
+WHERE ROLE='Graphic Designer'
+
+IV-) Count and Filter ==>
+
+14-) Find the person with the highest number of points in students 
+
+Query Answer:
+SELECT name, points FROM students WHERE Points= (SELECT max(Points) FROM students);
+
+Result of the query:
+"Omar"	"1000"
+
+15-) Find the average of points in students
+
+Query Answer:
+SELECT AVG(Points) FROM students;
+
+Result of the query:
+441.666666666667
+
+16-) Find the number of students that have 500 points 
+
+Query Answer:
+SELECT COUNT(Points) AS numberofstudents FROM students WHERE points= 500;
+
+Result of the query:
+2
+
+17-) Find the names of students that contains 's'
+
+Query Answer:
+SELECT name AS namescontains_s FROM students WHERE name LIKE '%s%';
+
+Result of the Query:
+"Basma"
+"Hasan"
+
+18-) Find all students based on the decreasing order of their points 19
+
+Query Answer:
+SELECT name,points AS decreasing_order_pts FROM students ORDER by points DESC;
+
+Result of the query:
+"Omar"	"1000"
+"Robert"	"500"
+"Jana"	"500"
+"Basma"	"400"
+"Hasan"	"150"
+"Alex"	"100"
+
+
+
+
+
+
 
 
 
