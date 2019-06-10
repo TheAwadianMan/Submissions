@@ -47,8 +47,9 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-var arr = ["M-16", "AK-47", "PpSh", "Mg42", "FAMAS"];
+var arr = ["M-16", "AK-47", "PpsH", "Mg42", "FAMAS"];
 function onDataReceived(text) {
+  var l= text.length;
 
 var argument= text.split(' ');
 
@@ -63,11 +64,15 @@ else if(text === 'list\n') {
   list();
 } 
 
+else if(text.trim().slice(0,3)  === 'add') {
+  add(text,l);
+}
+
 else if(text === 'help\n'){
  help();
  }
 
-  else{
+else{
     unknownCommand(text);
   }
  
@@ -114,11 +119,22 @@ function help() {
 console.log('If you write the word "Hello"+ a series of other words you can receive multiple commands\nYou\nexit\nunknown command\n')
 }
 
+/*We create a loop to list the strings contained within the array simultaneously*/
 function list(text) {
   for (var i=0 ; i<arr.length; i++) {
-    console.log((i+1)+'_'+arr[i])
+    console.log((i+1)+')'+arr[i])
   }
-}}
+}
+
+/*We create an ADD function to that enables us to add a task*/
+function add(text,length) {
+  if (length>5) {
+    arr.push(text.trim().substring(4,length))
+  }
+  else {
+    console.log("error")
+  }}}
+
 
 // The following line starts the application
-startApp("Omar Awad")
+startApp("Omar Awad");
