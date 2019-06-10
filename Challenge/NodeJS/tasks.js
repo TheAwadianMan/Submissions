@@ -100,7 +100,7 @@ function quit(){
 }
 
 
-
+/*this function is used to list all the available commands that the user can use on node which are hello exit quit and unknown command*/
 function help() {
 console.log('hello\nquit\nexit\nunknown command\n')
 }
