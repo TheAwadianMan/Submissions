@@ -47,7 +47,9 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+var arr = ["M-16", "AK-47", "PpSh", "Mg42", "FAMAS"];
 function onDataReceived(text) {
+
 var argument= text.split(' ');
 
   if (text === 'quit\n' || text === 'exit\n') {
@@ -57,14 +59,20 @@ var argument= text.split(' ');
   else if(argument[0] === 'hello' || text === 'hello\n') {
     hello(argument);
   }
+else if(text === 'list\n') {
+  list();
+} 
 
 else if(text === 'help\n'){
  help();
  }
+
   else{
     unknownCommand(text);
   }
-}
+ 
+
+
 
 
 /**
@@ -90,7 +98,6 @@ function hello(parameter){
 
 
 
-
 /**
  * Exits the application
  *
@@ -107,5 +114,11 @@ function help() {
 console.log('If you write the word "Hello"+ a series of other words you can receive multiple commands\nYou\nexit\nunknown command\n')
 }
 
+function list(text) {
+  for (var i=0 ; i<arr.length; i++) {
+    console.log((i+1)+'_'+arr[i])
+  }
+}}
+
 // The following line starts the application
-startApp('Omar Awad');
+startApp("Omar Awad")
