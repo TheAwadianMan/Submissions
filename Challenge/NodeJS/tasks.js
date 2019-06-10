@@ -104,7 +104,7 @@ function quit(){
 
 /*this function is used to list all the available commands that the user can use on node which are hello exit quit and unknown command*/
 function help() {
-console.log('hello\nquit\nexit\nunknown command\n')
+console.log('If you write the word "Hello"+ a series of other words you can receive multiple commands\nYou\nexit\nunknown command\n')
 }
 
 // The following line starts the application
