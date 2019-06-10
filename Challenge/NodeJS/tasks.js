@@ -85,7 +85,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(parameter){
-  console.log(parameter.join(" "))
+  console.log(parameter.join(" ").replace("\n", "!"))
 }
 
 
