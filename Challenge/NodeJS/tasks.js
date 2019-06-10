@@ -131,7 +131,7 @@ function quit(){
 
 /*this function is used to list all the available commands that the user can use on node which are hello exit quit and unknown command*/
 function help() {
-console.log('If you write the word "Hello"+ a series of other words you can receive multiple commands\nYou\nexit\nunknown command\n')
+console.log('If you write the word "Hello"+ a series of other words you can receive multiple commands\nYou\nexit\nunknown command\n we also created 3 remove commands to remove the last task the first element and the second elemeent from the list respectively\n')
 }
 
 /*We create a loop to list the strings contained within the array simultaneously*/
