@@ -68,6 +68,21 @@ else if(text.trim().slice(0,3)  === 'add') {
   add(text,l);
 }
 
+else if(text === 'remove\n') {
+  removeFirst();
+}
+
+else if(text === 'remove1\n') {
+  removeSecond();
+}
+
+else if(text === 'remove2\n') {
+  removeThird();
+}
+else if (text.trim().slice(0,4) === 'edit') {
+  edit(text, l);
+}
+
 else if(text === 'help\n'){
  help();
  }
@@ -133,8 +148,16 @@ function add(text,length) {
   }
   else {
     console.log("error")
-  }}}
-
-
+  }}
+/*We create 3 REMOVE functions that either enable us to remove the last task, remove the last element of the list, or remove the second element of the list*/
+  function removeFirst() {
+  arr.pop();
+  }
+ function removeSecond () {
+   arr.shift();
+ }
+function removeThird () {
+  arr.splice(1,1);
+}}
 // The following line starts the application
 startApp("Omar Awad");
