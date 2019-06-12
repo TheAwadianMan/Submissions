@@ -75,14 +75,24 @@ app.get("/movies/read/by-date", function(req, res) {
 });
 
 app.get("/movies/read/by-rating", function(req, res) {
-  res.send({
-    status: 200,
-    data: movies.sort(function(a,b) {
+  res.send({status: 200, data: movies.sort(function(a,b) {
       return (b.rating) - (a.rating); })
   })
 });
 
-
+app.get('/movies/read/by-title', (req, res) => {
+  res.send({ status: 200,data: movies.sort(function(a,b) {
+      var TitleA = a.title.toUpperCase();
+      var TitleB = b.title.toUpperCase();
+ if(TitleA < TitleB) {
+  return -1
+} else if(TitleA > TitleB) {
+  return 1
+} else {
+  return 0 }
+})
+})
+});
 
 app.get("/movies/create", function(req, res) {
   TITLE = req.query.title
