@@ -60,6 +60,13 @@ app.get("/search", function(req, res) {
 app.get("/movies/read", function(req, res) {
   res.send({status: 200, data: movies});
 });
+    
+app.get('/hello/:x' , function(req, res) {
+    console.log(req)
+    console.log(res)
+    const n= req.query.name;
+    res.send({url:req.url, query:n, paramater:req.params.x});
+});
 
 app.get("/movies/read/by-date", function(req, res) {
   res.send({status: 200, data: movies.sort(function(a,b) {
@@ -91,13 +98,6 @@ app.get("/movies/create", function(req, res) {
     res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
   }
 
-});
-    
-app.get('/hello/:x' , function(req, res) {
-    console.log(req)
-    console.log(res)
-    const n= req.query.name;
-    res.send({url:req.url, query:n, paramater:req.params.x});
 });
 
 app.listen(port, function () {
