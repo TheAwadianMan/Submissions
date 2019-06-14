@@ -148,10 +148,30 @@ app.get("/movies/delete/:id?", function(req, res) {
 
 
 //route which enable us to update the library containing the movie database//
-app.get("/movies/update", function(req, res) {
-  res.send({status:200, message:"ok"})
-});
+app.get('/movies/update/:ID',function(req,res) {
+  var idexist=req.params.ID
+  var newtitle=req.query.title
+  var newyear=req.query.year
+  var newrating=req.query.rating
 
+  if(idexist>0 && idexist<movies.length){
+      if(newtitle!=movies[idexist].title){
+          movies[idexist].title=newtitle;
+      }
+      else if(newyear!=movies[idexist].year){ 
+           movies[idexist].year=newyear;
+      }
+      else if(newrating!=movies[idexist].rating){
+           movies[idexist].rating=newrating;
+      }
+  res.send({status:200, message: movies})
+  }        
+      
+  else{    
+       res.send({error:true, message:'ID not exist'})
+      }
+  
+})
 //global function which specifies on which port we are hosting the website//
 app.listen(port, function () {
     console.log("Server is running on "+ port +" port");
