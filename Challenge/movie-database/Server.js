@@ -2,6 +2,10 @@ const express = require('express');
 
 const port = 3000;
 
+const mongoose = require('mongoose');
+
+const url = 'mongodb+srv://CMDB:samar@cluster0-t6agm.mongodb.net/test?retryWrites=true&w=majority';
+
 const app = express();
 
 //Below is a global variable contained within an array that lists out the movies we want to workin with//
@@ -176,3 +180,78 @@ app.get('/movies/update/:ID',function(req,res) {
 app.listen(port, function () {
     console.log("Server is running on "+ port +" port");
   });
+
+  app.get('/movies/update/:ID?', (req, res) => {
+    var User = movieCollection;
+    if (mongoose.Types.ObjectId.isValid(req.params.ID)){
+    if(mongoose.Types.ObjectId.isValid(req.params.ID) && req.query.title) {
+        User.findByIdAndUpdate(req.params.ID,{$set:{title:req.query.title}},{multi:true, new:true})       
+        .then((docs)=>{
+           if(docs) {
+             
+        
+           } else {
+             reject({success:false,data:"no such user exist"});
+           }
+        }).catch((err)=>{
+            reject(err);
+        })
+        }
+        if(mongoose.Types.ObjectId.isValid(req.params.ID) && req.query.year) {
+            User.findByIdAndUpdate(req.params.ID,{$set:{year:req.query.year}},{multi:true, new:true})       
+            .then((data)=>{
+               if(data) {
+          
+               } else {
+                 reject({success:false,data:"no such user exist"});
+               }
+            }).catch((err)=>{
+                reject(err);
+            })}
+            if(mongoose.Types.ObjectId.isValid(req.params.ID) && req.query.rating) {
+                User.findByIdAndUpdate(req.params.ID,{$set:{rating:req.query.rating}},{multi:true, new:true})       
+                .then((data)=>{
+                   if(data) {
+                     
+                   // resolve({success:true,data:docs});
+                   } else {
+                     reject({success:false,data:"no such user exist"});
+                   }
+                }).catch((err)=>{
+                    reject(err);
+                })} 
+                if (mongoose.Types.ObjectId.isValid(req.params.ID)){
+                    var User= movieCollection;
+                User.find({})
+                .then((data)=>{
+                    res.send({status:200, data: data })
+                })
+                .catch((err)=>{
+                console.log(err);
+                })}
+               
+}
+else{
+    res.send({status:404, error:true, message:'the movie <ID> does not exist'})
+}})
+
+app.get('/movies/delete/:ID?', (req, res) => {
+    var User = movieCollection;
+    if(mongoose.Types.ObjectId.isValid(req.params.ID)) {
+        User.findOneAndRemove({_id: req.params.ID})
+          .then((docs)=>{
+             if(docs) {
+                resolve({"success":true,data:docs});
+             } else {
+                reject({"success":false,data:"no such user exist"});
+             }
+        }).catch((err)=>{
+            reject(err);
+        })
+      } else {
+          reject({"success":false,data:"please provide correct Id"});
+      }
+
+});
+
+    
